@@ -1,0 +1,17 @@
+
+Q1: Why didn't we use sudo before node lab.js in this case?
+   A1: We didn't use sudo because lab.js is a local file. We dont need permission for it.
+
+
+Q2: What does Lab.js do?
+A2: It helps read the contents of plain.txt asynchronously. After reading its content, it prints it out on the console.
+
+Q3: Why does ************after readFile************
+    appear before the contents or plain.txt in the output while the call to readFile is before 
+    the console.log call that prints this line.
+A3: It apperas because the code doesn't wait for the file to read. It executes it immediately.
+
+Q4: What does the function toString('utf8') do?
+A4: It basically changes the raw file to readable text string for us. When deleted, it changed it into numbers.
+
+
