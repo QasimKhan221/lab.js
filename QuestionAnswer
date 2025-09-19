@@ -14,4 +14,12 @@ A3: It apperas because the code doesn't wait for the file to read. It executes i
 Q4: What does the function toString('utf8') do?
 A4: It basically changes the raw file to readable text string for us. When deleted, it changed it into numbers.
 
+Q5: We don't need to convert the read buffer using toString('utf8') before we serve it up to the client. Why Not?
+A5: The response.end() method, it can accept buffer object directly. HTTP response will send bytes to the client and the browser will translate them ased on content-type. Which converts the string.
 
+Q6: How can we build a server that is capable of serving all types of files without having to change the code everytime?
+A6: We can do it by making an object that maps common file exentions to their correct MIME types instead of if/else.
+
+Q7: The http server should probably able to send html,js,and other files to the browser, as well as respond to queries/routes like theo ne you implemented in homework assignment 2. How can we combine all these features in the same server?
+A7: We have to first parse the URL to its correct path it requests and check if it listens to the sttatic file.
+    Then if it matches with the specific route, we execute the handler function. Then use a routing mechanism like IF statements to handle both files requested.
